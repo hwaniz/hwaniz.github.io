@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Build the al-folio source and publish it to this repository's Pages branch.
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+remote_url="$(git remote get-url origin)"
+case "$remote_url" in
+  https://github.com/hwaniz/hwaniz.github.io.git|git@github.com:hwaniz/hwaniz.github.io.git) ;;
+  *) echo 'Expected the hwaniz/hwaniz.github.io repository.' >&2; exit 1 ;;
+esac
+JEKYLL_ENV=production bundle exec jekyll build
+publish_directory="$(mktemp -d)"
+trap 'rm -rf "$publish_directory"' EXIT
+if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+  git clone --quiet --depth 1 --branch gh-pages "$remote_url" "$publish_directory"
+else
+  git -C "$publish_directory" init --quiet -b gh-pages
+  git -C "$publish_directory" remote add origin "$remote_url"
+fi
+# Only clear the temporary publishing checkout; the source stays untouched.
+find "$publish_directory" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+cp -a _site/. "$publish_directory/"
+touch "$publish_directory/.nojekyll"
+git -C "$publish_directory" add --all
+if git -C "$publish_directory" diff --cached --quiet; then
+  echo 'The published files are already current.'
+  exit 0
+fi
+git -C "$publish_directory" -c user.name="$(git log -1 --format=%an)" -c user.email="$(git log -1 --format=%ae)" commit --quiet -m "Publish academic homepage"
+git -C "$publish_directory" push origin HEAD:gh-pages

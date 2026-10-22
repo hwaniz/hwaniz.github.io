@@ -1,16 +1,14 @@
 ---
-layout: archive
-title: "Publications"
+layout: page
 permalink: /publications/
-author_profile: true
+title: publication
+description: International conference publications.
+nav: true
+nav_order: 1
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<p class="publication-legend"><sup>*</sup> Equal contribution · <sup>†</sup> Corresponding author</p>
 
-{% include base_path %}
-
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="publications">
+{% bibliography %}
+</div>

@@ -1,0 +1,313 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=2 cm, % seperation between body and page edge from the top
+    bottom=2 cm, % seperation between body and page edge from the bottom
+    left=2 cm, % seperation between body and page edge from the left
+    right=2 cm, % seperation between body and page edge from the right
+    footskip=1.0 cm, % seperation between body and footer
+]{geometry} % for adjusting page geometry
+\usepackage{etoolbox}
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Jihwan Oh's CV},
+    pdfauthor={Jihwan Oh},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt
+}{
+    0.3 cm
+}{
+    0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last update: October 22, 2026}\hspace{\widthof{Last update: October 22, 2026}}
+    }}}%
+  }%
+}%
+
+\let\hrefWithoutArrow\href
+
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Jihwan Oh}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{\hrefWithoutArrow{mailto:jh.oh@kaist.ac.kr}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}jh.oh@kaist.ac.kr}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/jihwan-oh-6a0187238/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}Linkedin}}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+
+
+
+
+        
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+      
+
+
+    \vspace{0.2cm}
+    \section{Research Interests}
+    I have conducted research on \textbf{Summarization} and \textbf{Alignment}. Currently, I'm interested in \textbf{AI for Research}, leveraging AI agents to support and automate research workflows, including peer review and scientific writing.
+    
+    \section{Education}
+
+        \begin{twocolentry}{
+            
+            
+        \textit{Mar 2026 -- Present}}
+            \textbf{Korea Advanced Institute of Science and Technology (KAIST)}
+
+            \textit{Ph.D. in Industrial and Systems Engineering}
+        \end{twocolentry}
+        
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Advisor: \href{https://scholar.google.com/citations?user=Ijzuc-8AAAAJ&hl=en}{Hwanjun Song}
+            \end{highlights}
+        \end{onecolentry}
+        
+        \begin{twocolentry}{
+            
+            
+        \textit{Mar 2024 -- Feb 2026}}
+            \textbf{Korea Advanced Institute of Science and Technology (KAIST)}
+
+            \textit{M.S. in Industrial and Systems Engineering}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Advisor: \href{https://scholar.google.com/citations?user=Ijzuc-8AAAAJ&hl=en}{Hwanjun Song}
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.05 cm}
+        \begin{twocolentry}{
+            
+            
+        \textit{Mar 2020 -- Feb 2024}}
+            \textbf{Ulsan National Institute of Science and Technology (UNIST)}
+
+            \textit{B.S. in Industrial Engineering}
+        \end{twocolentry}
+
+        
+        \section{Publications}
+        {\footnotesize
+        $^*$: Equal Contribution, $^\dagger$: Corresponding Author    
+        }     
+        \vspace{-0.4cm}
+        \subsection*{International Conference}
+        \begin{enumerate}
+        \item \textbf{\href{https://disl-lab.github.io/publications/}{Show Me How You Cite: Citation Fidelity, Usage, and Topology in the Evidence Behavior of AI Scientific Writing}} \\
+         $\underline{\textbf{Jihwan Oh}}^*$, Gyeonghun Sun$^*$, Jisoo Kim, Yuho Lee, Taewon Yun, Jisu Shin, and Hwanjun Song$^\dagger$ \\
+         International Conference on Empirical Methods in Natural Language Processing (\textbf{EMNLP 2026}, Main) (\textbf{Oral})
+        \item \textbf{\href{https://disl-lab.github.io/publications/}{Towards Robust Retrieval-Augmented Generation via Reliability-Aware Adaptive Evidence Selection}} \\
+         Minkyu Che, $\underline{\textbf{Jihwan Oh}}$, Jeonghwan Choi, Jeesu Jung$^\dagger$, and Hwanjun Song$^\dagger$ \\
+         Findings of the Association for Computational Linguistics: EMNLP (\textbf{Findings of EMNLP 2026})
+        \item \textbf{\href{https://openreview.net/forum?id=IYCfYFt9LL}{Quality of Rejections Matters: Preference Data Construction for Faithful Summarization}} \\
+         $\underline{\textbf{Jihwan Oh}}$, Taewon Yun, Minkyu Che, Sundong Kim, and Hwanjun Song$^\dagger$ \\
+         Conference on Language Modeling (\textbf{COLM 2026})
+        \item \textbf{\href{https://openreview.net/forum?id=6BGDGKZN7q}{ReFeed: Multi-dimensional Summarization Refinement with Reflective Reasoning on Feedback}} \\
+         Taewon Yun, $\underline{\textbf{Jihwan Oh}}$, Hyangsuk Min, Yuho Lee, Jihwan Bang, Jason Cai, and Hwanjun Song$^\dagger$ \\
+         Conference on Language Modeling (\textbf{COLM 2025})
+        \item \textbf{\href{https://aclanthology.org/2025.naacl-long.38/}{Learning to Summarize from LLM-generated Feedback}} \\
+         Hwanjun Song$^\dagger$, Taewon Yun, Yuho Lee, $\underline{\textbf{Jihwan Oh}}$, Gihun Lee, Jason Cai, and Hang Su \\
+         Annual Conference of the Nations of the Americas Chapter of the ACL (\textbf{NAACL 2025}, Main) (\textbf{Oral})
+        \item \textbf{\href{https://aclanthology.org/2025.coling-main.16/}{Learning to Verify Summary Facts with Fine-Grained LLM Feedback}} \\
+         $\underline{\textbf{Jihwan Oh}}$, Jeonghwan Choi, Nicole Hee-Yeon Kim, Taewon Yun, and Hwanjun Song$^\dagger$ \\
+         International Conference on Computational Linguistics (\textbf{COLING 2025}) (\textbf{Oral})
+        \end{enumerate}
+
+
+        
+
+    
+
+
+
+        
+            
+            
+
+
+
+
+            
+            
+
+
+
+
+
+
+    
+
+
+
+        
+            
+            
+
+
+
+
+
+
+    
+    \section{Teaching Experience}
+
+
+
+        
+        \begin{twocolentry}{Spring 2026}
+            \textbf{Programming for Data Science (DS801)}
+        \end{twocolentry}
+        
+        \vspace{0.2 cm}
+        
+        \begin{twocolentry}{Fall 2024}
+            \textbf{Introduction to Data Science for IE (IE261)}
+        \end{twocolentry}
+
+    
+
+\end{document}

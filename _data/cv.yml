@@ -1,0 +1,41 @@
+- title: Contact
+  type: map
+  contents:
+    - name: Name
+      value: Jihwan Oh
+    - name: Affiliation
+      value: Department of Industrial and Systems Engineering, KAIST
+    - name: Email
+      value: '<a href="mailto:jh.oh@kaist.ac.kr">jh.oh@kaist.ac.kr</a>'
+    - name: Links
+      value: '<a href="https://github.com/hwaniz">GitHub</a> · <a href="https://www.linkedin.com/in/jihwan-oh-6a0187238/">LinkedIn</a>'
+- title: Research Interests
+  type: list
+  contents:
+    - '<strong>AI for Research:</strong> AI agents for peer review and scientific writing.'
+    - '<strong>Summarization and alignment:</strong> faithful summarization, fine-grained feedback, and preference learning.'
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D. in Industrial and Systems Engineering
+      institution: Korea Advanced Institute of Science and Technology (KAIST)
+      year: Mar 2026 – Present
+      description:
+        - 'Advisor: <a href="https://scholar.google.com/citations?user=Ijzuc-8AAAAJ&hl=en">Hwanjun Song</a>'
+    - title: M.S. in Industrial and Systems Engineering
+      institution: Korea Advanced Institute of Science and Technology (KAIST)
+      year: Mar 2024 – Feb 2026
+      description:
+        - 'Advisor: <a href="https://scholar.google.com/citations?user=Ijzuc-8AAAAJ&hl=en">Hwanjun Song</a>'
+    - title: B.S. in Industrial Engineering
+      institution: Ulsan National Institute of Science and Technology (UNIST)
+      year: Mar 2020 – Feb 2024
+- title: Publications
+  type: publications
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Programming for Data Science (DS801)
+      year: Spring 2026
+    - title: Introduction to Data Science for IE (IE261)
+      year: Fall 2024
