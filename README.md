@@ -5,11 +5,12 @@ Academic homepage built with [al-folio v0.14.7](https://github.com/alshedivat/al
 ## Edit content
 
 - `_pages/about.md`: biography and research interests.
+- `_data/venues.yml`: green conference badges with abbreviated venue names and years.
 - `_bibliography/papers.bib`: all six publications, in CV order within each year. Set `selected = {true}` to show a paper on the homepage. Author suffixes `*` and `†` preserve equal contribution and corresponding author markers.
 - `_pages/cv.md`: displays the CV PDF inside the page, with the site navigation retained and a link to open or download the PDF.
 - `_data/cv.yml`: retained structured CV information for future use.
 - `_data/socials.yml`: contact and social links.
-- `assets/img/profile.png`: profile photo reused from the previous homepage.
+- `assets/img/profile-20261023.jpg`: profile photo supplied by the owner.
 - `assets/pdf/Jihwan_Oh_CV.pdf`: downloadable CV.
 - `assets/tex/Jihwan_Oh_CV.tex`: CV source, with template comments removed and the first duplicate Education heading corrected to Research Interests.
 - `_config.yml`: site name, URL, theme options, and bibliography settings.

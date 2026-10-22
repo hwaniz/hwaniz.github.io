@@ -13,6 +13,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--global-theme-co
 .about-links a { white-space: nowrap; }
 .publication-legend { color: var(--global-text-color-light); font-size: .88rem; margin: 0 0 1.7rem; }
 .publications .title { line-height: 1.5; }
+.publications .abbr { margin-top: .1rem; }
+.publications ol.bibliography .abbr abbr.badge { color: #000 !important; background-color: #00a43a; box-shadow: none; border-radius: .5rem !important; padding: .6rem .5rem; font-size: .95rem; font-weight: 700; line-height: 1.35; white-space: normal; text-decoration: none; }
 .publications h2.bibliography { color: var(--global-text-color-light); font-size: 1.35rem; }
 .publications .author { line-height: 1.65; }
 .publications .author em { font-style: normal; font-weight: 600; }
@@ -40,6 +42,8 @@ footer.sticky-bottom { margin-top: 4rem; }
   .cv .list-group-item { padding-left: 0; padding-right: 0; }
   .cv .row > div[style] { width: auto !important; padding-left: 15px; }
   .publications .row { margin-right: 0; }
+  .publications .abbr { margin-bottom: .85rem; }
+  .publications ol.bibliography .abbr abbr.badge { width: auto !important; min-width: 180px; max-width: 100%; padding: .55rem 1rem; }
 }
 @media print {
   nav, footer, .cv-download, .skip-link, .social, .links { display: none !important; }
