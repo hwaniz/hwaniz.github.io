@@ -27,6 +27,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--global-theme-co
 .cv .table-cv { margin-bottom: .4rem; }
 .cv .table-cv .badge { white-space: normal; line-height: 1.55; font-size: .72rem; padding: .4rem .6rem; }
 .cv-download { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; margin-top: .7rem; border: 1px solid var(--global-theme-color); padding: .45rem .7rem; border-radius: 3px; }
+.cv-pdf-actions { margin: -1rem 0 1rem; text-align: right; font-size: .9rem; }
+.cv-pdf-frame { display: block; width: 100%; height: calc(100vh - 190px); min-height: 760px; border: 1px solid var(--global-divider-color); border-radius: 4px; background: #f3f3f3; }
 footer.sticky-bottom { margin-top: 4rem; }
 @media (max-width: 575.98px) {
   .profile { width: 100%; float: none !important; margin: 0 0 1.6rem !important; }
@@ -34,6 +36,7 @@ footer.sticky-bottom { margin-top: 4rem; }
   .profile .more-info { text-align: center; }
   .post-title { font-size: 2.35rem; }
   .cv-download { float: none !important; display: flex; width: max-content; margin: .85rem 0 1rem; }
+  .cv-pdf-frame { min-height: 560px; height: calc(100vh - 170px); }
   .cv .list-group-item { padding-left: 0; padding-right: 0; }
   .cv .row > div[style] { width: auto !important; padding-left: 15px; }
   .publications .row { margin-right: 0; }
