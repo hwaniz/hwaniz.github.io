@@ -31,4 +31,4 @@ Previously, I worked on **summarization** and **alignment**, with a focus on fai
 - **Evidence-grounded generation** — citation fidelity and reliable use of evidence.
 - **Summarization and alignment** — factual consistency, feedback, and preference learning.
 
-<p class="about-links"><a href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">↗</span></a><span aria-hidden="true"> · </span><a href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">↗</span></a></p>
+<p class="about-links"><a href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">↗</span></a><span aria-hidden="true"> · </span><a href="{{ '/assets/pdf/Jihwan_Oh_CV.pdf' | relative_url }}">Curriculum vitae <span aria-hidden="true">↗</span></a></p>
