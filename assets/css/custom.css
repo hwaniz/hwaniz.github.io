@@ -18,7 +18,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--global-theme-co
 .publication-legend { color: var(--global-text-color-light); font-size: .88rem; margin: 0 0 1.7rem; }
 .publications .title { line-height: 1.5; }
 .publications .abbr { margin-top: .25rem; }
-.publications ol.bibliography .abbr abbr.badge { color: #fff !important; box-shadow: none; line-height: 1.15; white-space: normal; text-decoration: none; }
+.publications ol.bibliography .abbr abbr.badge { color: #fff !important; box-shadow: none; line-height: 1.15; white-space: nowrap; text-decoration: none; }
 .publications h2.bibliography { color: var(--global-text-color-light); font-size: 1.35rem; }
 .publications .author { line-height: 1.65; }
 .publications .author em { font-style: normal; font-weight: 600; }
