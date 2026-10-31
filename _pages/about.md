@@ -23,6 +23,6 @@ I am a Ph.D. student in **Industrial and Systems Engineering at KAIST**, advised
 
 My current research interest is **AI for Research**: using AI agents to support and automate research workflows, including **peer review** and **scientific writing**.
 
-Previously, I worked on **summarization** and **alignment**, with a focus on faithful summarization, fine-grained feedback, and preference data. I received my M.S. in Industrial and Systems Engineering from KAIST in 2026 and my B.S. in Industrial Engineering from UNIST in 2024.
+Previously, I worked on **summarization** and **alignment**, with a focus on faithful summarization, fine-grained feedback, and preference optimization and data. I received my M.S. in Industrial and Systems Engineering from KAIST in 2026 and my B.S. in Industrial Engineering from UNIST in 2024.
 
 <p class="about-links"><a href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">↗</span></a><span aria-hidden="true"> · </span><a href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">↗</span></a></p>
